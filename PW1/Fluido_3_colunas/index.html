@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Fluido de 3 Colunas</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background-color: #572e4f; /* Cor de fundo */
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh; /* Faz com que o body ocupe toda a altura da tela */
+        }
+    
+        header {
+          background-color: #333;
+          color: #fff;
+          padding: 1em;
+          text-align: center;
+        }
+    
+        .wrapper {
+          flex: 1; /* Faz com que o conteúdo principal expanda para ocupar o espaço disponível */
+          display: flex;
+          flex-wrap: wrap; /* Permite que as colunas se ajustem */
+        }
+    
+        .container {
+          display: flex;
+          gap: 20px;
+          padding: 20px;
+          width: 100%;
+        }
+    
+        .coluna {
+          padding: 20px;
+        }
+    
+        .coluna-1 {
+          flex: 1 1 30%;
+          background-color: #f4f4f4;
+        }
+    
+        .coluna-2 {
+          flex: 1 1 30%;
+          background-color: #ddd;
+        }
+
+        .coluna-3 {
+          flex: 1 1 30%;
+          background-color: #ccc; /* Cor diferente para distinção */
+        }
+    
+        footer {
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          padding: 1em;
+        }
+    
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+          .coluna-1, .coluna-2, .coluna-3 {
+            flex: 1 1 100%;
+          }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site - Fluido de 3 Colunas</h1>
+    </header>
+    
+    <div class="wrapper">
+        <main class="container">
+            <section class="coluna coluna-1">
+                <h2>Coluna 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat, orci id pellentesque finibus.</p>
+            </section>
+    
+            <section class="coluna coluna-2">
+                <h2>Coluna 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in suscipit arcu.</p>
+            </section>
+    
+            <section class="coluna coluna-3">
+                <h2>Coluna 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac libero id ligula vehicula lacinia.</p>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Meu Site</p>
+    </footer>
+</body>
+</html>
