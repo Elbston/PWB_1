@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Fixo de 2 Colunas</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background-color: #572e4f; /* Cor de fundo */
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh; /* Faz com que o body ocupe toda a altura da tela */
+        }
+    
+        header {
+          background-color: #333;
+          color: #fff;
+          padding: 1em;
+          text-align: center;
+        }
+    
+        .wrapper {
+          flex: 1; /* Faz com que o conteúdo principal expanda para ocupar o espaço disponível */
+          display: flex;
+        }
+    
+        .container {
+          display: flex;
+          gap: 20px;
+          padding: 20px;
+          width: 100%;
+          max-width: 1200px; /* Largura fixa */
+          margin: auto; /* Centraliza o layout na tela */
+        }
+    
+        .coluna {
+          padding: 20px;
+        }
+    
+        .coluna-esquerda {
+          flex: 1 1 70%;
+          background-color: #f4f4f4;
+        }
+    
+        .coluna-direita {
+          flex: 1 1 30%;
+          background-color: #ddd;
+        }
+    
+        footer {
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          padding: 1em;
+        }
+    
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+          .coluna-esquerda, .coluna-direita {
+            flex: 1 1 100%;
+          }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site - Fixo de 2 Colunas</h1>
+    </header>
+    
+    <div class="wrapper">
+        <main class="container">
+            <section class="coluna coluna-esquerda">
+                <h2>Conteúdo Principal</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat, orci id pellentesque finibus, est ligula scelerisque nisi, at feugiat odio arcu a arcu.</p>
+            </section>
+    
+            <aside class="coluna coluna-direita">
+                <h2>Barra Lateral</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in suscipit arcu.</p>
+            </aside>
+        </main>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Meu Site</p>
+    </footer>
+</body>
+</html>

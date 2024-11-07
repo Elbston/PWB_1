@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Fluido de 2 Colunas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ajustes para o layout flexível */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #572e4f; /* Cor de fundo personalizada */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+        }
+        
+        /* O conteúdo principal vai ocupar o espaço restante */
+        main {
+            flex: 1;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .container {
+            margin-top: 30px; /* Adiciona margem superior */
+        }
+
+        .bg-light {
+            background-color: #f4f4f4;
+        }
+
+        .bg-secondary {
+            background-color: #ddd;
+        }
+
+        .p-4 {
+            padding: 1.5rem;
+        }
+
+        .rounded {
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Meu site</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(atual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <header class="text-center">
+        <h1>Pagina principal</h1>
+    </header>
+    
+    <main class="container">
+        <div class="row">
+            <!-- Coluna Principal -->
+            <section class="col-md-8">
+                <div class="bg-light p-4 rounded">
+                    <h2>Conteúdo Principal</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat, orci id pellentesque finibus, est ligula scelerisque nisi, at feugiat odio arcu a arcu.</p>
+                </div>
+            </section>
+
+            <!-- Barra Lateral -->
+            <aside class="col-md-4">
+                <div class="bg-secondary text-white p-4 rounded">
+                    <h2>Barra Lateral</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in suscipit arcu.</p>
+                </div>
+            </aside>
+        </div>
+        <div class="card my-4" style="width: 300px;">
+          <img src="images/sample.svg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+              <h5 class="card-title">Elbston Filho</h5>
+              <p class="card-text">Elbston Souza Lima Filho, é um programador novato que não entende muito bem das linguagens e ainda esta aprendendo, mesmo usando o chat gpt ele usa ele apenas como gabarito e estuda os codigos que usa</p>
+              <a href="https://github.com/Elbston" class="btn btn-primary">View Profile</a>
+          </div>
+      </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Site</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
