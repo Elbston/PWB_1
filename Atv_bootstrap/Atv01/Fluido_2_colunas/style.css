@@ -1,0 +1,21 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0; /* Remove qualquer padding */
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Garante largura total */
+    overflow-x: hidden; /* Remove barra de rolagem horizontal se aparecer */
+}
+
+.container-fluid, .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Remove padding do Bootstrap */
+    max-width: 100%; /* Garante que o container use toda a largura */
+}
+
+.row {
+    flex: 1;
+}

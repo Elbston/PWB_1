@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Fixo - 2 Colunas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            max-width: 100%;
+        }
+        .row {
+            flex: 1;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="bg-dark text-white text-center py-3">
+            <h1>GameZone - Fixo 2 Colunas</h1>
+        </header>
+
+        <div class="row">
+            <div class="col-md-6 bg-light p-4">
+                <h2>Conteúdo Principal</h2>
+                <p>Análises de jogos populares e notícias sobre o mercado de games.</p>
+            </div>
+            <div class="col-md-6 bg-secondary text-white p-4">
+                <h2>Barra Lateral</h2>
+                <p>Artigos em destaque, links úteis e blogs recomendados sobre games.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 GameZone</p>
+        </footer>
+    </div>
+</body>
+</html>
