@@ -3,82 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de Tecnologia</title>
+    <title>GameZone - Home</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos gerais */
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        .navbar {
+            background-color: #333;
+        }
+        .card, .table, .form-control {
+            background-color: #2d2d2d;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #8a2be2;
+            border: none;
+        }
+        .more-content {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleMoreContent(id) {
+            const content = document.getElementById(id);
+            const button = document.getElementById("toggleButton-" + id);
+
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                button.innerText = "Leia Menos";
+            } else {
+                content.style.display = "none";
+                button.innerText = "Leia Mais";
+            }
+        }
+    </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">BlogTech</a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">GameZone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="Jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="Plataforma.html">Plataformas</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container mt-4" id="home">
-        <h1 class="mb-4">Bem-vindo ao BlogTech</h1>
+    <!-- Conteúdo Principal -->
+    <div class="container my-4">
+        <h1 class="text-center">GameZone - Jogos em Destaque</h1>
 
-        <!-- Cards -->
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Artigo 1</h5>
-                        <p class="card-text">Resumo do artigo sobre tecnologia.</p>
-                        <a href="#" class="btn btn-primary">Leia mais</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Artigo 2</h5>
-                        <p class="card-text">Resumo do artigo sobre inovação.</p>
-                        <a href="#" class="btn btn-primary">Leia mais</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Artigo 3</h5>
-                        <p class="card-text">Resumo do artigo sobre o futuro da tecnologia.</p>
-                        <a href="#" class="btn btn-primary">Leia mais</a>
-                    </div>
-                </div>
+        <!-- Card com Leia Mais -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Hollow Knight</h3>
+                <p class="card-text">
+                    "Hollow Knight" é um jogo de ação e aventura em estilo Metroidvania, desenvolvido pela Team Cherry, que se passa no misterioso e sombrio reino de Hallownest. Clique em "Leia Mais" para ver mais detalhes sobre a história e características do jogo.
+                </p>
+                <!-- Conteúdo extra que será exibido ao clicar em "Leia Mais" -->
+                <p class="card-text more-content" id="moreContent">
+                    Você controla um pequeno cavaleiro que explora esse vasto mundo subterrâneo, enfrentando criaturas e desafios enquanto desvenda segredos sobre o passado e os mistérios do reino. O jogo se destaca pelo seu visual artístico desenhado à mão, pela trilha sonora atmosférica e pelo combate fluido, que exige precisão e habilidade.
+                    <!-- Link adicional para mais detalhes em outra página -->
+                    <a href="detalhes.html" class="d-block mt-2">Veja mais</a>
+                </p>
+                <!-- Botão "Leia Mais" -->
+                <button class="btn btn-primary" id="toggleButton-moreContent" onclick="toggleMoreContent('moreContent')">Leia Mais</button>
             </div>
         </div>
 
-        <!-- Tabela -->
-        <h2 class="mt-5">Últimos artigos</h2>
-        <table class="table table-bordered">
+        <!-- Tabela de Jogos -->
+        <h2 class="mt-5">Top Jogos</h2>
+        <table class="table table-striped mt-3">
             <thead>
                 <tr>
-                    <th>Título</th>
-                    <th>Data</th>
-                    <th>Resumo</th>
+                    <th>Jogo</th>
+                    <th>Plataforma</th>
+                    <th>Avaliação</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Artigo sobre IA</td>
-                    <td>01/11/2024</td>
-                    <td>Discussão sobre o impacto da IA na sociedade.</td>
-                </tr>
-                <tr>
-                    <td>Artigo sobre Segurança</td>
-                    <td>15/10/2024</td>
-                    <td>Como proteger dados pessoais online.</td>
-                </tr>
+                <tr><td>Jogo A</td><td>PC</td><td>9.5</td></tr>
+                <tr><td>Jogo B</td><td>Console</td><td>8.7</td></tr>
+                <tr><td>Jogo C</td><td>Mobile</td><td>8.9</td></tr>
             </tbody>
         </table>
 
-        <!-- Formulário -->
-        <h2 class="mt-5" id="contact">Entre em Contato</h2>
+        <!-- Formulário de Contato -->
+        <h2 class="mt-5">Contato</h2>
         <form>
             <div class="form-group">
                 <label for="name">Nome</label>
@@ -90,14 +111,15 @@
             </div>
             <div class="form-group">
                 <label for="message">Mensagem</label>
-                <textarea class="form-control" id="message" rows="4"></textarea>
+                <textarea class="form-control" id="message" rows="3" placeholder="Sua mensagem"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
 
-    <footer class="bg-dark text-white text-center p-3 mt-5">
-        <p>&copy; 2024 BlogTech</p>
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-auto">
+        <p>&copy; 2024 GameZone - Todos os direitos reservados.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
