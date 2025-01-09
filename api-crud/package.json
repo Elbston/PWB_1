@@ -1,0 +1,16 @@
+{
+  "name": "api-crud",
+  "version": "1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specifide\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "4.21.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
