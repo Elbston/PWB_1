@@ -1,0 +1,33 @@
+<h1>Crypto Data</h1>
+<hr>
+<h3 style='color: black'>Coin</h3>
+
+<p style='color: orange'>
+    <%= locate %>
+</p>
+
+<h3 style='color: black'>Valor em <%= locate %>
+</h3>
+
+<p>
+    <% if(locate === 'USD') { %>
+
+        <%= b.bpi.USD.rate %> em <%= b.time.updated %>
+
+    <% }else if(locate === 'GBP') { %>
+
+        <%= b.bpi.GBP.rate %> em <%= b.time.updated %>
+
+    <% }else if(locate === 'EUR') { %>
+
+        <%= b.bpi.EUR.rate %> em <%= b.time.updated %>
+        
+    <% }%>
+</p>
+<hr>
+
+<footer style='color: gray'>
+    <p>
+        <%= b.disclaimer %>
+    </p>
+</footer>
