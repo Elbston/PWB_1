@@ -1,0 +1,133 @@
+/* Ajuste para o body e o layout da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c0f13; /* Cor de fundo escura */
+    color: #e2e2e2; /* Cor do texto claro */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-left: 0; /* Ajuste para remover o espaço à esquerda */
+}
+
+/* Ajuste para o container principal */
+.main-container {
+    display: flex;
+    flex: 1;
+    margin-left: 0; /* Remover qualquer margem esquerda */
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #2e3b4e;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Sidebar oculta por padrão */
+    height: 100%;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 100;
+}
+
+.sidebar.active {
+    left: 0; /* Exibe a sidebar */
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo-img {
+    width: 100px;
+    height: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: #b7cece;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar a:hover {
+    background-color: #4a5967;
+}
+
+/* Ajuste para a área de conteúdo */
+.content {
+    margin-left: 0; /* Garante que o conteúdo ocupe toda a largura disponível */
+    padding: 20px;
+    width: 100%;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease; /* Suaviza a transição quando a sidebar é ativada */
+}
+
+/* Ajuste para o formulário e o relatório */
+.container {
+    margin-top: 70px; /* Ajuste para a navbar fixa */
+    padding: 30px;
+    background-color: #6e7e85;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 80px auto 20px;
+}
+
+/* Estilo do relatório */
+.response {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #ffffff; /* Cor do texto para branco */
+    background-color: #3b4f60; /* Cor de fundo do relatório */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Garantir que o relatório ocupe toda a largura disponível */
+    overflow-wrap: break-word; /* Quebra palavras longas se necessário */
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Preserva quebras de linha */
+    margin: 20px auto;
+}
+
+/* Ajustes na barra de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b4f60;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar span {
+    font-size: 20px;
+}
+
+/* Botão para abrir a sidebar */
+.toggle-sidebar-btn {
+    background-color: #3b4f60;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: #2e3b4e;
+    color: #e2e2e2;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Arquivo</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Seu Logo" class="logo-img">
+            </div>
+            <a href="/">Home</a>
+            <a href="/upload">Upload</a>
+            <a href="/relatorio">Relatório</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Navbar -->
+            <div class="navbar">
+                <span>Bem-vindo ao Sistema geração de relatorios</span>
+                <button class="toggle-sidebar-btn">☰</button>
+            </div>
+
+            <!-- Container para o formulário de upload -->
+            <div class="container">
+                <h1>Faça o Upload do Arquivo</h1>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" name="file" id="fileInput" accept=".txt" required>
+                    <button type="submit">Enviar Arquivo</button>
+                </form>
+
+                <!-- Exibindo o relatório -->
+                <div id="response" class="response"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Elbston - Todos os direitos reservados
+    </div>
+
+    <script>
+        // Funcionalidade para abrir/fechar a sidebar
+        document.querySelector('.toggle-sidebar-btn').addEventListener('click', function () {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+
+        // Enviar o arquivo via AJAX
+        document.getElementById('uploadForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            const fileInput = document.getElementById('fileInput');
+            formData.append('file', fileInput.files[0]);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('response').innerHTML = `
+                        <h2>Relatório Gerado:</h2>
+                        <pre>${data.report}</pre>
+                    `;
+                } else {
+                    document.getElementById('response').innerHTML = `
+                        <p style="color: red;">Erro: ${data.error}</p>
+                    `;
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao enviar o arquivo:', error);
+                document.getElementById('response').innerHTML = `
+                    <p style="color: red;">Erro ao enviar o arquivo. Tente novamente.</p>
+                `;
+            });
+        });
+    </script>
+</body>
+
+</html>
